@@ -14,6 +14,7 @@ protected:
 // Methods
 public:
 	// TODO: Constructor
+    Employee(const std::string& name, int id, const std::string& type);
 
     virtual ~Employee() {}
 
@@ -21,6 +22,9 @@ public:
     virtual double calculatePay() const = 0;
 
     // TODO: Getters
+    std::string getName();
+    std::string getType();
+    int getId();
 };
 
 #endif

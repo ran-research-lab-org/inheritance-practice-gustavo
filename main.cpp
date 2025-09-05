@@ -38,14 +38,25 @@ void readFile(const string& filename, vector<HourlyEmployee>& hourlyEmployees, v
 int main() {
     
     /* TODO: Define two vectors: HourlyEmployee and SalariedEmployee */
+    vector<HourlyEmployee> vHourly = {};
+    vector<SalariedEmployee> vSalaried = {};
 
     // TODO: Add vectors to readFile call, hourly first
-    readFile("employee_info.csv", , );
+    readFile("employee_info.csv", vHourly, vSalaried);
     double result = 0;
 
     // TODO: Print the results
     // Remember that you can use the range based for loop
     // Display the results of each type of employee
+    cout << "Hourly Employees: " << endl;
+    for(int i = 0; i < vHourly.size(); i++){
+        cout << "ID: " << vHourly[i].getId() << " | Name: " << vHourly[i].getName() << " | Pay this period: $" << vHourly[i].calculatePay() << endl;
+    }
+
+    cout << "Salaried Employees: " << endl;
+    for(int i = 0; i < vSalaried.size(); i++){
+        cout << "ID: " << vSalaried[i].getId() << " | Name: " << vSalaried[i].getName() << " | Pay this period: $" << vSalaried[i].calculatePay() << endl;
+    }
 
     return 0;
 }
